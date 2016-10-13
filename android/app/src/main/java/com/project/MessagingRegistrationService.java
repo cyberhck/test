@@ -14,5 +14,6 @@ public class MessagingRegistrationService extends FirebaseInstanceIdService {
     public void onTokenRefresh(){
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d("REACTNATIVEE",refreshedToken);
+        // send that token to server
     }
 }
