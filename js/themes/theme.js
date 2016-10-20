@@ -44,7 +44,7 @@ export default theme = StyleSheet.create({
 	container: {
     flex: 1,
     padding: 12,
-    flexDirection: 'row',
+    flexDirection: 'column',
   },
   text: {
     marginLeft: 12,

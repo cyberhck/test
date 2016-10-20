@@ -21,7 +21,7 @@ public class MessagingRegistrationService extends FirebaseInstanceIdService {
     }
 
     private void sendToserver(String refreshedToken) {
-        String ip = "http://192.168.0.102:8000/register/"+refreshedToken;
+        String ip = "http://192.168.0.100:8000/register/"+refreshedToken;
         try{
             URL url = new URL(ip);
             URLConnection conn = url.openConnection();

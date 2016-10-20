@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Text, View, ListView, TouchableNativeFeedback, NativeModules } from 'react-native';
+import {Text, View, ListView, TouchableNativeFeedback, NativeModules, StyleSheet } from 'react-native';
 import theme from './themes/theme';
+import {Container, Header, Footer, Title, Button, Icon, Content} from 'native-base';
 import {NewsletterRow} from './NewsletterRow';
 export class Newsletter extends React.Component{
   constructor(){
@@ -27,12 +28,12 @@ export class Newsletter extends React.Component{
   }
   render = () => {
     return (
-        <ListView
-          style={theme.container}
-          enableEmptySections={true}
-          dataSource={this.state.newsletter}
-          renderRow={(rowData) => <NewsletterRow {...rowData}></NewsletterRow>}
-        />
+            <ListView
+              enableEmptySections={true}
+              dataSource={this.state.newsletter}
+              renderSeparator={(sectionId, rowId) => <View key={rowId} style={{backgroundColor: '#8E8E8E',height: StyleSheet.hairlineWidth,}} />}
+              renderRow={(rowData) => <NewsletterRow {...rowData}></NewsletterRow>}
+              />
       );
   }
 }
