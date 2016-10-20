@@ -41,4 +41,17 @@ export default theme = StyleSheet.create({
 		justifyContent:"center",
 		alignItems:"center",
 	},
+	container: {
+    flex: 1,
+    padding: 12,
+    flexDirection: 'row',
+  },
+  text: {
+    marginLeft: 12,
+    fontSize: 16,
+  },
+	newsletterRow: {
+		paddingTop:18,
+		paddingBottom:18,
+	},
 });
