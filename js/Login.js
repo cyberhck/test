@@ -1,22 +1,24 @@
 import React, {Component} from 'react';
-import {Text, View, TouchableNativeFeedback, TextInput} from 'react-native';
-
+import {Text, View, TouchableNativeFeedback, TextInput, NativeModules} from 'react-native';
 import theme from './themes/theme';
 export class Login extends React.Component{
   constructor = () => {
-    this.setState({email:'',password:''});
+    this.setState({email:'gautam.nishchal@gmail.com',password:'nishchal11'});
   }
   Login = () => {
-    let body = `email_address=${this.state.email}&password=${this.state.password}`
-    console.log("REACTNATIVE", body);
-    fetch('https://www.crazy-factory.com/process_login.php',
-      {headers:{"content-type":"application/x-www-form-urlencoded"},
-      method:"POST",
-      body:body})
-        .then(response =>{
-            console.log("REACTNATIVE", response.headers.get('set-cookie'));
-        })
-        .catch((err) => {console.log("REACTNATIVE ERR", err)});
+    // let body = `email_address=${this.state.email}&password=${this.state.password}`
+    let login = NativeModules.Login;
+    login.authenticate(this.state.email, this.state.password)
+      .then((res) => {
+        if(res == 'df_session_id'){
+          console.log("REACTNATIVE "+'Logged in');
+        }else{
+          throw new Error('Login incorrect');
+        }
+      })
+      .catch((err) => {
+        console.log("REACTNATIVE "+err)
+      });
   }
   render = () => {
     return (

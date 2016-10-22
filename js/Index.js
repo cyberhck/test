@@ -21,6 +21,9 @@ export class Index extends React.Component{
         <TouchableNativeFeedback onPress={this.navigateToNewsletter}>
           <View style={theme.button}><Text style={theme.buttonText}>Newsletter</Text></View>
         </TouchableNativeFeedback>
+        <TouchableNativeFeedback onPress={this.navigateToLogin}>
+          <View style={theme.button}><Text style={theme.buttonText}>Login</Text></View>
+        </TouchableNativeFeedback>
       </View>
       );
   }

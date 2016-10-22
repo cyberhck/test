@@ -28,12 +28,22 @@ export class Newsletter extends React.Component{
   }
   render = () => {
     return (
+        <Container style={{backgroundColor:'#CCC'}}>
+          <Header>
+            <Title>Newsletters</Title>
+          </Header>
+          <Content style={{paddingLeft:8, paddingRight:8, paddingTop:8 }}>
             <ListView
               enableEmptySections={true}
               dataSource={this.state.newsletter}
-              renderSeparator={(sectionId, rowId) => <View key={rowId} style={{backgroundColor: '#8E8E8E',height: StyleSheet.hairlineWidth,}} />}
+              renderSeparator={(sectionId, rowId) => <View key={rowId} style={{backgroundColor: '#CCC',height: 5,}} />}
               renderRow={(rowData) => <NewsletterRow {...rowData}></NewsletterRow>}
               />
+          </Content>
+          <Footer>
+            <Title>Crazy Factory GMBH</Title>
+          </Footer>
+        </Container>
       );
   }
 }

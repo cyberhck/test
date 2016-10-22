@@ -20,7 +20,7 @@ export default theme = StyleSheet.create({
 		alignItems:"center",
 	},
 	buttonText:{
-		fontSize:24,
+		fontSize:18,
 		fontWeight:"bold",
 		textAlign:"center",
 	},
